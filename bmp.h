@@ -52,12 +52,58 @@ struct BMP {
         inp.read((char*)&BMPColorHeader, sizeof(BMPColorHeader));
     }
 
-    BMP(int32_t width, int32_t height, bool has_alpha = true) {
+    void write(const char *fname) {
     	// ...
     }
 
-    void write(const char *fname) {
-    	// ...
+    void outPutBMPInformation()
+    {
+        outPutFileHeaderInfo();
+        outPutInfoHeaderInfo();
+        outPutColorHeaderInfo();
+    }
+
+    void outPutFileHeaderInfo()
+    {
+        std::cout << "File Header"<< std::endl;
+        std::cout << "_____________________________________"<< std::endl;
+        std::cout << "Filetype: " << FileHeader.Filetype << std::endl;
+        std::cout << "FileSize: " << FileHeader.FileSize << std::endl;
+        std::cout << "Reserved1: " << FileHeader.Reserved1 << std::endl;
+        std::cout << "Reserved2: " << FileHeader.Reserved2 << std::endl;
+        std::cout << "OffsetData: " << FileHeader.OffsetData << std::endl;
+        std::cout << std::endl;
+    }
+
+    void outPutInfoHeaderInfo()
+    {
+        std::cout << "Info Header"<< std::endl;
+        std::cout << "_____________________________________"<< std::endl;
+        std::cout << "BSize: " << BMPInfoHeader.BSize << std::endl;
+        std::cout << "Width: " << BMPInfoHeader.Width << std::endl;
+        std::cout << "Height: " << BMPInfoHeader.Height << std::endl;
+        std::cout << "Planes: " << BMPInfoHeader.Planes << std::endl;
+        std::cout << "BitCount: " << BMPInfoHeader.BitCount << std::endl;
+        std::cout << "Compression: " << BMPInfoHeader.Compression << std::endl;
+        std::cout << "SizeImage: " << BMPInfoHeader.SizeImage << std::endl;
+        std::cout << "XPixelsPerMeter: " << BMPInfoHeader.XPixelsPerMeter << std::endl;
+        std::cout << "YPixelsPerMeter: " << BMPInfoHeader.YPixelsPerMeter << std::endl;
+        std::cout << "ColorsUsed: " << BMPInfoHeader.ColorsUsed << std::endl;
+        std::cout << "ColorsImportant: " << BMPInfoHeader.ColorsImportant << std::endl;
+        std::cout << std::endl; 
+    }
+
+    void outPutColorHeaderInfo()
+    {
+        std::cout << "Color Header"<< std::endl;
+        std::cout << "_____________________________________"<< std::endl;
+        std::cout << "RedMask: " << BMPColorHeader.RedMask << std::endl;
+        std::cout << "GreenMask: " << BMPColorHeader.GreenMask << std::endl;
+        std::cout << "BlueMask: " << BMPColorHeader.BlueMask << std::endl;
+        std::cout << "AlphaMask: " << BMPColorHeader.AlphaMask << std::endl;
+        std::cout << "ColorSpaceType: " << BMPColorHeader.ColorSpaceType << std::endl;
+        std::cout << std::endl; 
+
     }
 
 private:
