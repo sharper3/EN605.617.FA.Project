@@ -15,12 +15,12 @@ This is a work in progress.
 3. ~~Load bitmap image data.~~
 4. ~~Output bitmap image information.~~
 5. ~~Host to device memory allocation.~~
-6. Kernel code.
-7. Write modified image data to file.
-8. Kernel timing.
+6. ~~Kernel code.~~
+7. ~~Write modified image data to file.~~
+8. ~~Kernel timing.~~
 
 
 ### Stretch Goals
 
-9. Host method for same operation for comparison purposes.
+9. ~~Host method for same operation for comparison purposes.~~
 10. Add ability to choose "mixed" colors such as purple, orange, yellow, etc.
